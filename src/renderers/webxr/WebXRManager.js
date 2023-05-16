@@ -71,6 +71,7 @@ class WebXRManager extends EventDispatcher {
 		this.enabled = false;
 
 		this.isPresenting = false;
+		this.isMultiview = false;
 
 		this.isMultiview = typeof useMultiview === 'undefined' ? false : useMultiview;
 
