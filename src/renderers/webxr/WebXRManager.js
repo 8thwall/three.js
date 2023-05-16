@@ -73,8 +73,12 @@ class WebXRManager extends EventDispatcher {
 		this.isPresenting = false;
 
 		this.isMultiview = typeof useMultiview === 'undefined' ? false : useMultiview;
-    
-		this.getCamera = function () {}; // @deprecated, r153
+
+		this.getCamera = function () {
+
+			return cameraXR; // TODO (tri): Remove this in 153 release
+
+		}; // @deprecated, r153
 
 		this.setUserCamera = function ( value ) {
 
