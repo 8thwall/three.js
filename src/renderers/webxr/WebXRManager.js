@@ -69,7 +69,7 @@ class WebXRManager extends EventDispatcher {
 		this.enabled = false;
 
 		this.isPresenting = false;
-		this.isMultiview = false;
+		this.isMultiview = typeof useMultiview === 'undefined' ? false : useMultiview;
 
 		this.getController = function ( index ) {
 
@@ -307,7 +307,7 @@ class WebXRManager extends EventDispatcher {
 
 					}
 
-					scope.isMultiview = useMultiview && extensions.has( 'OCULUS_multiview' );
+					scope.isMultiview = scope.isMultiview && extensions.has( 'OCULUS_multiview' );
 
 					const projectionlayerInit = {
 						colorFormat: gl.RGBA8,
