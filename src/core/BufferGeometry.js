@@ -1056,9 +1056,27 @@ class BufferGeometry extends EventDispatcher {
 
 			}
 
+			this.computeWeightedNormal();
+
 			this.normalizeNormals();
 
 			normalAttribute.needsUpdate = true;
+
+		}
+
+	}
+
+	computeWeightedNormal() {
+
+		const normals = this.attributes.normal;
+
+		this.userData.accumWeightedNormal = new Vector3();
+
+		for ( let i = 0, il = normals.count; i < il; i ++ ) {
+
+			_vector.fromBufferAttribute( normals, i );
+
+			this.userData.accumWeightedNormal.add( _vector );
 
 		}
 
