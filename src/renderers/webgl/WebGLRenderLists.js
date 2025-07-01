@@ -100,7 +100,7 @@ function WebGLRenderList() {
 
 		renderItemsIndex ++;
 
-		object.userData.renderItem = renderItem;
+		if ( object.userData ) object.userData.renderItem = renderItem;
 
 		return renderItem;
 
