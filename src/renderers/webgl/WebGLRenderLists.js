@@ -56,7 +56,7 @@ function WebGLRenderList() {
 	const transmissive = [];
 	const transparent = [];
 
-	let objectIdToRenderItem = new WeakMap();
+	let objectIdToRenderItem = new Map();
 
 	function init() {
 
@@ -66,7 +66,7 @@ function WebGLRenderList() {
 		transmissive.length = 0;
 		transparent.length = 0;
 
-		objectIdToRenderItem = new WeakMap();
+		objectIdToRenderItem.clear();
 
 	}
 
@@ -126,7 +126,7 @@ function WebGLRenderList() {
 
 		}
 
-		objectIdToRenderItem.set( object, renderItem );
+		objectIdToRenderItem.set( object.id, renderItem );
 
 	}
 
@@ -148,7 +148,7 @@ function WebGLRenderList() {
 
 		}
 
-		objectIdToRenderItem.set( object, renderItem );
+		objectIdToRenderItem.set( object.id, renderItem );
 
 	}
 
