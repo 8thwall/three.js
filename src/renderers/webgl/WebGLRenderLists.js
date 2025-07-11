@@ -186,7 +186,7 @@ function WebGLRenderList() {
 		transmissive: transmissive,
 		transparent: transparent,
 
-		objectIdToRenderItem,
+		objectIdToRenderItem: objectIdToRenderItem,
 
 		init: init,
 		push: push,
