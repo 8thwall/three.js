@@ -56,7 +56,7 @@ function WebGLRenderList() {
 	const transmissive = [];
 	const transparent = [];
 
-	let objectIdToRenderItem = new Map();
+	const objectIdToRenderItem = new Map();
 
 	function init() {
 
